@@ -1,0 +1,30 @@
+<div class="login_container">
+    <form class="formgroup" *ngIf="loginForm" [formGroup]="loginForm" (ngSubmit)="goToDash()">
+        <mat-card>
+            <mat-card-title>Login</mat-card-title>
+            <mat-card-content>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Email" formControlName='email' required>
+                    <mat-error
+                        *ngIf="loginForm.invalid && (loginForm.controls.email.touched || loginForm.controls.email.dirty)">
+                        <span *ngIf="loginForm.hasError('required','email')">Please enter email.</span>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="password" matInput placeholder="Password" formControlName='password' required>
+                    <mat-error
+                        *ngIf="loginForm.invalid && (loginForm.controls.password.touched || loginForm.controls.password.dirty)">
+                        <span *ngIf="loginForm.hasError('required','password')">Please enter password.</span>
+                    </mat-error>
+                </mat-form-field>
+            </mat-card-content>
+            <mat-card-actions>
+                <div class="lgnbtn">
+                    <button mat-raised-button color="warn" (click)="clear()">Clear</button>
+                    <button mat-raised-button color="primary">Login</button>
+                </div>
+                <button mat-flat-button (click)="goToRegister()">Don't have account</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+</div>

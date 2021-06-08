@@ -1,0 +1,20 @@
+.register_container {
+  padding: 100px 0 0 0;
+  display: flex;
+  justify-content: center;
+
+  form {
+    margin: 0% 35%;
+
+    mat-card-actions {
+      display: flex;
+      justify-content: center;
+    }
+    .errmsg {
+      font-size: 20px;
+      text-align: center;
+      color: red;
+      font-family: auto;
+    }
+  }
+}

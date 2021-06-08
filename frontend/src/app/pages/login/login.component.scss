@@ -1,0 +1,23 @@
+.login_container {
+    padding: 100px 0 0 0;
+    display: flex;
+    justify-content: center;
+
+    form {
+        margin: 0% 20%;
+
+        mat-card-actions {
+            display: flex;
+            flex-direction: column;
+            .lgnbtn{
+                align-self: center;
+            }
+        }
+        .errmsg {
+            font-size: 20px;
+            text-align: center;
+            color: red;
+            font-family:auto;
+        }
+    }
+}

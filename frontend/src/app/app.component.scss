@@ -1,0 +1,12 @@
+mat-toolbar{
+    background-color: rgb(50, 86, 163);
+    .navbar{
+        display: flex;
+        flex-direction: row;
+
+        mat-icon{
+            margin-right: 10px;
+            font-size: 30px;
+        }
+    }
+}

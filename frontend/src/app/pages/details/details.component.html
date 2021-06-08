@@ -1,0 +1,25 @@
+<div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <caption><b>Users</b></caption>
+        <ng-container matColumnDef="fullName">
+            <th mat-header-cell *matHeaderCellDef> Full Name </th>
+            <td mat-cell *matCellDef="let person"> {{person.fullName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="contact">
+            <th mat-header-cell *matHeaderCellDef> Contact </th>
+            <td mat-cell *matCellDef="let person"> {{person.contact}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef> Address </th>
+            <td mat-cell *matCellDef="let person"> {{person.address}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <div style="text-align: center; padding-top: 10px;" *ngIf="!dataSource.length">
+        <b>No Data Found</b>
+    </div>
+</div>

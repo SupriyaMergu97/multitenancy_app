@@ -1,0 +1,31 @@
+<div class="dashboard_container">
+    <div class="logout">
+        <button mat-raised-button (click)="logout()" color="warn">Logout</button>
+    </div>
+    <form class="formgroup" *ngIf="dashboardForm" [formGroup]="dashboardForm" (ngSubmit)="onSubmit()">
+        <mat-card>
+            <mat-card-title>Please fill the Details</mat-card-title>
+            <mat-card-content>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Full Name" formControlName="fullName">
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Contact" formControlName="contact">
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Address" formControlName="address">
+                </mat-form-field>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary">Submit</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+    <div>
+        <app-details [users]='users' *ngIf="!isLoading;else loader"></app-details>
+    </div>
+</div>
+
+<ng-template #loader>
+    <div class="loader">Data Loading...</div>
+</ng-template>
